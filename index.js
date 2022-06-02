@@ -1,3 +1,4 @@
+
 const express = require("express");
 const path = require("path");
 const app = express();
@@ -6,11 +7,11 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded());
 
-let pokemon = [];
+let pokemon = undefined;
 
 const listaPokemons = [
     { 
-         número:"Nº001",
+         id:001,
         
          nome: "Bulbasaur",
         
@@ -30,7 +31,7 @@ const listaPokemons = [
 
     },
     { 
-        número:"Nº002",
+        id:002,
         
         nome: "Ivysaur",
 
@@ -50,7 +51,7 @@ const listaPokemons = [
         
     },
     { 
-        número:"Nº003",
+        id:003,
         
         nome: "Venusaur",
         
@@ -76,18 +77,17 @@ app.get("/", (req, res) => {
   
 });
 
-app.post/*post pq envio dados*/("/create", (req,res)=>{
+app.post/*post pq envio dados*/("/create", (req, res)=>{
     const pokemon = req.body;
-    pokemon.id = listaPokemons.length ++;
+    
+  
+    pokemon.id = listaPokemons.length +1;
     listaPokemons.push(pokemon);
     res.redirect("/#cards")
 
 });
 
-app.get("detalhes/:id", (req, res) => {
-    const id = req.params.id;
-    pokemon = listaPokemons.find((pokemon) => pokemon.id == id);
-})
+
 
 app.listen(3000, () => 
     console.log("Servidor rodando em http://localhost:3000")

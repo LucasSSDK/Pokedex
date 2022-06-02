@@ -50,11 +50,24 @@
                 <div class="card" >
                     <img src="<%= pokemon.imagem%>" alt="">
 
+
                     <h2><%= pokemon.nome%></h2>
 
-                    <p class="descricao"><%= pokemon.descricao%></p>
+                    <p class="id">Nº: <%= pokemon.id%></p>
 
-                    <p>Tipo: <%= pokemon.tipo%></p>
+                    <p class="altura">Altura: <%= pokemon.altura%></p>
+
+                    <p class="peso">Peso: <%= pokemon.peso%></p>
+                    
+                    <p class="categoria">Categoria: <%= pokemon.categoria%></p>
+                    
+                    <p class="tipo">Tipo: <%= pokemon.tipo%></p>
+
+                    <p class="descricao"><%= pokemon.descricao%></p>
+                    
+                    <p class="habilidade">Habilidade: <%= pokemon.habilidade%></p>
+
+                    
                 
                 
                 </div>
@@ -64,39 +77,41 @@
     </section>
 
     <section id="cadastro">
+
+        
         <h2>Adicione seu pokemon</h2>
             
 
         <form action="/create" method="POST">
             
-                <label for="numero">Numero: </label>
-                <input type="number" name="numero" id="numero" placeholder="Digite o Nº" required>
+                <label for="id">id: </label>
+                <input type="number" name="id" id="id" placeholder="Digite o Nº" required>
             
                 <label for="nome">Nome: </label>
                 <input type="text" name="nome" id="nome" placeholder="Digite o nome do pokemon" required>
             
                 <label for="altura">Altura: </label>
-                <input type="number" name="numero" id="numero" placeholder="Digite a altura em m:cm" required>
+                <input type="number" name="altura" id="altura" placeholder="Digite a altura em m:cm" required>
                 
                 
                 <label for="peso">Peso: </label>
-                <input type="number" name="numero" id="numero" placeholder="Digite o peso" required>
+                <input type="number" name="peso" id="peso" placeholder="Digite o peso" required>
                 
                 
                 <label for="categoria">Categoria: </label>
-                <input type="text" name="nome" id="categoria" placeholder="Digite a categoria" required>
+                <input type="text" name="categoria" id="categoria" placeholder="Digite a categoria" required>
                 
                 
                 <label for="tipo">Tipo: </label>
-                <input type="text" name="nome" id="tipo" placeholder="Digite o tipo do pokemon" required>
+                <input type="text" name="tipo" id="tipo" placeholder="Digite o tipo do pokemon" required>
                 
                 
-                <label for="imagem">Imagem: </label>
+                <label for="imagem">Link da Imagem: </label>
                 <input type="imagem" name="imagem" id="imagem" placeholder="Adicione a imagem do pokemon" required>
                 
                 
                 <label for="descricao">Descrição: </label>
-                <input type="text" name="nome" id="descricao" placeholder="Descreva esse pokemon" required>
+                <input type="text" name="descricao" id="descricao" placeholder="Descreva esse pokemon" required>
                 
                 
                 <label for="habilidade">Habilidade: </label>
@@ -105,15 +120,19 @@
                 
                 <button id="btnCadastrar" type="submit">Cadastrar</button>
                 
+                
             </form>
+            
         
 </main>
 
     <footer>
         <p>
-            <The future is blue /> <a href="https://blueedtech.com.br/" target="_blank"> BlueEdtech</a>
+             <a href="https://github.com/LucasSSDK/Pokedex" target="_blank"> github Eng.Lucas</a>
         </p>
     </footer>
+    
+
 </body>
 
 </html>
